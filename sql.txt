@@ -1,0 +1,43 @@
+CREATE DATABASE `infoscreen`;
+CREATE USER 'Omega'@'localhost' IDENTIFIED BY '0m3g4dr4g0n';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `infoscreen`.* TO 'Omega'@'localhost';
+
+CREATE TABLE IF NOT EXISTS `infoscreen`.`slidefromurl` (
+  `id` int(11) NOT NULL,
+  `url` text COLLATE utf16_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `infoscreen`.`slides` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `time` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `editable` tinyint(1) NOT NULL,
+  `module` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `infoscreen`.`users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `infoscreen`.`users` ADD UNIQUE(`username`);
+INSERT INTO `infoscreen`.`users` (`id`, `username`, `password`) VALUES (NULL, 'Admin', '$6$rounds=4567$abcdefghijklmnop$T0D/nR61uEGyTBscMmIucLrx.lzD5bKvigiuMJMp1R3ZkXvZgS8vWN29LkLr4rEYmfXgSGLeVK9K0nrYPqaps0');
+
+CREATE TABLE IF NOT EXISTS `infoscreen`.`slidewithkpi` (
+  `id` int(11) NOT NULL,
+  `kpi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `infoscreen`.`slidefromvideo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start_tid` varchar(255) NOT NULL,
+  `stop_tid` varchar(255) NOT NULL,
+  `ext` varchar(255) DEFAULT NULL,
+  `mime_type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

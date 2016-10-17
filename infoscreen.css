@@ -1,0 +1,81 @@
+html,body{
+    width: 100%;
+    height: 100%;
+	overflow: hidden;
+ }
+html,body,main,aside,section,div,h1,h2,p,canvas,header,table,tr,th,td{
+    margin: 0;
+    padding: 0;
+}
+body{
+	background-color: #eff4f9;
+    position:relative;
+    overflow: hidden;
+    font-size: 1.3vw;
+    font-family: "Arial";
+    font-weight: bold;
+    color: #657c83;
+}
+
+/* Infoscreen Logo */
+#infoscreen_logo{
+    opacity: 0.1;
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+	width: 25vw;
+}
+/* Infoscreen Logo END-------> */
+
+/* Sidebar */
+#infoscreen_sidebar{
+	position:absolute;
+	top: 5vw;
+	bottom: 0;
+	right: 2vw;
+	width: 18.5vw;
+}
+#infoscreen_sidebar section{
+	margin-bottom: 1.5vw;
+}
+.sidebar_module_section{
+    background-color:#ffffff;
+    position: relative;
+    overflow: auto;
+    border-bottom: 0.15vw solid rgba(89, 109, 116, 0.10);
+}
+.sidebar_module_section div,.sidebar_module_section div:first-child{
+    float:left;
+    padding:1vw;
+}
+.sidebar_module_section div:last-child{
+    float:right;
+    text-align:right;
+}
+.sidebar_module_section:last-child{
+    border-radius: 0 0 0.5vw 0.5vw;
+}
+/* Sidebar END-------> */
+
+/* Font */
+.infoscreen_text_description{
+    font-size: 0.80vw;
+    font-style: italic;
+    font-weight: normal;
+    color:#9ba9ae;
+}
+.infoscreen_highlight{
+    color: #00a388;
+    font-weight: bold;
+    font-size: 1.5vw;
+    font-style: normal;
+}
+/* Font END-------> */
+
+/* Shadow */
+.shadow, #infoscreen_searches{
+    box-shadow: 0 0.5vw 1vw rgba(105, 129, 136, 0.22);
+    -webkit-box-shadow: 0 0.5vw 1vw rgba(105, 129, 136, 0.22);
+    -moz-box-shadow: 0 0.5vw 1vw rgba(105, 129, 136, 0.22);
+}
+/* Shadow END-------> */

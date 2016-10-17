@@ -1,0 +1,41 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font: Arial;
+	background: #DDDDDD;
+}
+
+#menu{
+	width: 230px;
+	background: #444444 url("omega.png") no-repeat top;
+	padding: 220px 0 0 30px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	bottom: 0px; 
+}
+
+#menu a{
+	display: block;
+	color: #ffffff;
+	font-size: 25px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#content{
+	margin: 50px 10px 20px 300px;
+	z-index: 1;
+}
+
+#logoutofadmin {
+	position: absolute;
+	left: 5px;
+	top: 10px;
+	width: 50px;
+	font-size: 12px;
+	z-index: 10000;
+	color: #ffffff;
+	text-decoration: none;
+}
